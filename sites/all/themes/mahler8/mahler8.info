@@ -1,0 +1,8 @@
+name = Mahler 8
+description = Mahler 8 mini site for Brunel
+core = 7.x
+engine = phptemplate
+
+stylesheets[all][] = css/normalize.css
+stylesheets[all][] = css/main.css
+

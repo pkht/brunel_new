@@ -1,0 +1,4 @@
+name = Mahler 8
+description = "General functionality for mahler 8 module"
+package = Brunel
+core = 7.x

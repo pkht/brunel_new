@@ -1,0 +1,48 @@
+body { font-size:62.5%; background:url(../img/clouds-bkg.jpg) top center no-repeat #f8f2e2; }
+
+p { font-size:1.8em; margin:0 0 1em 0; }
+
+#page-wrapper { width:980px; margin:0 auto; }
+#page { background:#040707; padding:0px 20px 20px; }
+
+#header { height:80px; }
+#header h1 { background:url(../img/logo.jpg) top left no-repeat; width:300px; height:80px; text-indent:-9999em; float:left; margin:0; padding:0; }
+
+#navigation { width:640px; float:right; text-align:right; font-size: 1.5em; margin-top:35px; }
+#navigation ul {  }
+#navigation ul li { background:url(../img/nav-bullet.gif) 0% 50% no-repeat; padding:0px 5px 0px 15px; }
+#navigation ul li.first { background:none; }
+#navigation ul li a { color:#f8f2e2; text-transform:uppercase; text-decoration:none; }
+#navigation ul li a:hover { text-decoration:underline; }
+
+#sidebar-first { width:300px; float:left; margin:20px 20px 0px 0px; overflow:hidden; background:#040707; color:#f8f2e2; }
+
+#content { margin:20px 0px; padding:0px; background:#f8f2e2; }
+.sidebar-first #content { float:right; width:580px; padding:0px 20px; overflow:hidden; }
+
+#footer { width:900px; background:#f8f2e2; padding:20px; min-height:206px; }
+
+#footer #social_media {}
+#footer #social_media .latest_tweet { width:300px; height:200px; float:left; background:url(../img/twitter_horn.jpg) bottom left no-repeat; }
+#footer #social_media .latest_tweet h2 { margin:0; text-indent:-9999em; width:170px; height:19px; background:url(../img/latest_tweet_title.jpg) top left no-repeat; }
+#footer #social_media .latest_tweet p { font-size:1.4em; padding:10px 0px 0px 80px; }
+#footer #social_media .latest_tweet a { color:#bc2026; text-decoration:none; }
+#footer #social_media .latest_tweet a:hover { text-decoration:underline; }
+
+/* Blocks */
+
+/* Title banner block */
+#title-banner { width:940px; height:290px; display:block; background:url(../img/title-banner-img.jpg) top left no-repeat; overflow:hidden; }
+#title-banner .content { display:none; }
+#title-banner .tickets-link { position:absolute; top:189px; left:602px; display:block; }
+#title-banner .tickets-link a { text-indent:-9999em; display:block; width:321px; height:85px; background:url(../img/tickets-link.jpg) top left no-repeat; }
+
+/* Main block */
+#block-system-main { margin-top:20px;}
+
+/* Mahler portrait block */
+#block-block-2 img { margin-bottom:10px; }
+#block-block-2 p { margin:0; font-size:1.4em; }
+
+/*Orchestra list block*/
+#block-block-3 p { margin:0; padding-top:20px; }

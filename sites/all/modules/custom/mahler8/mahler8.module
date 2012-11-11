@@ -1,0 +1,66 @@
+<?php
+
+function mahler8_block_info()
+{
+    $blocks['title_banner'] = array(
+        'info' => t('Title Banner'),
+        'cache' => DRUPAL_CACHE_GLOBAL,
+    );
+    $blocks['social_media'] = array(
+        'info' => t('Social Media'),
+        'cache' => DRUPAL_CACHE_GLOBAL,
+    );
+    return $blocks;
+}
+
+function mahler8_block_view( $delta ) 
+{
+    $block = array();
+    switch( $delta ) 
+    {
+        case 'title_banner':
+            $block['content'] = mahler8_title_banner();
+            break;
+        case 'social_media':
+            $block['content'] = mahler8_social_media();
+            break;
+    }
+    return $block;
+}
+
+function mahler8_title_banner()
+{
+    $output = '<div id="title-banner">';
+    $output .= '<div class="content">';
+    $output .= '<p>The Brunel Sinfonia presents<br />Mahler Symphony No. 8<br />Symphony of a Thousand</p>';
+    $output .= '<p>1 Stage - 1 Symphony - 1 Night<br />508 performers<br />Sunday 24th March 2013 7.30pm<br />Colston Hall, Bristol</p>';
+    $output .= '</div>';
+    $output .= '<div class="tickets-link"><a target="_blank" href="http://www.colstonhall.org/whatson/Event3162" onclick="_gaq.push([\'_trackEvent\', \''.drupal_get_title().'\', \'Tickets\']);">Tickets</a></div>';
+    $output .= '</div>';
+    return $output;
+}
+
+function mahler8_social_media()
+{
+    $output = '<div id="social_media">';
+    $output .= mahler8_get_latest_tweet();
+    $output .= '</div>';
+    
+    return $output;
+}
+
+function mahler8_get_latest_tweet()
+{
+    $url = 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=brunelsinfonia&count=1';
+    $tweets = json_decode( file_get_contents( $url ), TRUE );
+    //dpm( $tweets );
+    
+    $ret = preg_replace("#(^|[\n ])([\w]+?://[\w]+[^ \"\n\r\t< ]*)#", "\\1<a href=\"\\2\" target=\"_blank\">\\2</a>", $tweets[0]['text']);
+    $ret = preg_replace("#(^|[\n ])((www|ftp)\.[^ \"\t\n\r< ]*)#", "\\1<a href=\"http://\\2\" target=\"_blank\">\\2</a>", $ret);
+    $ret = preg_replace("/@(\w+)/", "<a href=\"http://www.twitter.com/\\1\" target=\"_blank\">@\\1</a>", $ret);
+    $ret = preg_replace("/#(\w+)/", "<a href=\"http://search.twitter.com/search?q=\\1\" target=\"_blank\">#\\1</a>", $ret);
+
+    
+    $output = '<div class="latest_tweet"><h2>Latest tweet</h2><p>'.$ret.'</p></div>';
+    return $output;
+}

@@ -7,7 +7,7 @@
 
         <div id="header">
             
-            <h1>The Brunel Sinfonia - Building bridges through music</h1>
+            <h1><a href="/">The Brunel Sinfonia - Building bridges through music</a></h1>
         
             <?php if ($main_menu || $secondary_menu): ?>
                 <div id="navigation">
@@ -42,9 +42,9 @@
                     
                     <a id="main-content"></a>
                     
-                    <?php if ($breadcrumb): ?>
+                    <?php /*if ($breadcrumb): ?>
                         <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-                    <?php endif; ?>
+                    <?php endif;*/ ?>
                     
                     <?php /*print render($title_prefix); ?>
                     <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
@@ -67,7 +67,9 @@
             </div>
 
             <div id="footer">
-              <?php print render($page['footer']); ?>
+                <?php print render($page['footer']); ?>
+                <div id="hk_logo"><img src="<?php print drupal_get_path( 'theme', 'mahler8' )?>/img/hk_logo.jpg" alt="@hyperkraft" /></div>
+                <div id="footer_logo"><img src="<?php print drupal_get_path( 'theme', 'mahler8' )?>/img/logo_footer.jpg" alt="Brunel Sinfonia - Building bridges through music" /></div>
             </div>
 
         </div>

@@ -42,9 +42,35 @@ function mahler8_title_banner()
 
 function mahler8_social_media()
 {
+    mahler8_add_social_media_head();
+    
     $output = '<div id="social_media">';
+    
     $output .= mahler8_get_latest_tweet();
+    
+    $output .= '<div class="facebook_block">';
+    $output .= '<h2>Connect with us</h2>';
+    $output .= '<div class="facebook_block_like">';
+    $output .= '<p>Like us on facebook</p>';
+    $output .= '<div class="fb-like" data-href="http://facebook.com/brunelsinfonia" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div>';
     $output .= '</div>';
+    $output .= '</div>';
+    
+    $output .= '<div class="twitter_block">';
+    $output .= '<p>Follow us on twitter</p>';
+    $output .= '<div class="twitter_buttons">';
+    $output .= '<a href="https://twitter.com/brunelsinfonia" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @brunelsinfonia</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
+    $output .= '<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://mahler8.com" data-text="The storm is coming" data-via="brunelsinfonia" data-hashtags="mahler8">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
+    $output .= '</div>';
+    $output .= '</div>';
+    
+    $output .= '<div class="clear-both"></div>';    
+    
+    $output .= '</div>';
+    
+    
     
     return $output;
 }
@@ -63,4 +89,10 @@ function mahler8_get_latest_tweet()
     
     $output = '<div class="latest_tweet"><h2>Latest tweet</h2><p>'.$ret.'</p></div>';
     return $output;
+}
+
+function mahler8_add_social_media_head()
+{
+    
+    
 }

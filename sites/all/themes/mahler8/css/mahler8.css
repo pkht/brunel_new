@@ -27,6 +27,7 @@ h2 { margin:0 0 1em 0; }
 
 #content { margin:20px 0px; padding:20px; background:#f8f2e2; }
 
+.front #content { padding-top:0px; }
 .no-sidebars #content {  }
 .sidebar-first #content { float:right; width:580px; overflow:hidden; }
 .sidebar-second #content { float:left; width:580px; overflow:hidden; }

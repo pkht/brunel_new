@@ -71,6 +71,7 @@ h2 { margin:0 0 1em 0; }
 #title-banner .content { display:none; }
 #title-banner .tickets-link { position:absolute; bottom:20px; right:20px; display:block; }
 #title-banner .tickets-link a { text-indent:-9999em; display:block; width:198px; height:85px; background:url(../img/tickets-link.jpg) top left no-repeat; }
+#title-banner .tickets-link a:hover { background-position: bottom left;}
 
 /* Main block */
 #block-system-main { margin-top:20px;}

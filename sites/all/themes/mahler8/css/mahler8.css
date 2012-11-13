@@ -25,11 +25,11 @@ h2 { margin:0 0 1em 0; }
 #sidebar-first { width:300px; float:left; margin:20px 20px 0px 0px; overflow:hidden; background:#040707; color:#f8f2e2; }
 #sidebar-second { width:300px; float:right; margin:20px 0px 0px 20px; overflow:hidden; background:#040707; color:#f8f2e2; }
 
-#content { margin:20px 0px; padding:0px; background:#f8f2e2; }
+#content { margin:20px 0px; padding:20px; background:#f8f2e2; }
 
-.no-sidebars #content { padding:20px 20px; }
-.sidebar-first #content { float:right; width:580px; padding:0px 20px; overflow:hidden; }
-.sidebar-second #content { float:left; width:580px; padding:0px 20px; overflow:hidden; }
+.no-sidebars #content {  }
+.sidebar-first #content { float:right; width:580px; overflow:hidden; }
+.sidebar-second #content { float:left; width:580px; overflow:hidden; }
 
 #footer { width:940px; position:relative; overflow:hidden; padding-bottom:50px; margin-bottom:25px; }
 

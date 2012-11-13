@@ -52,6 +52,7 @@
                     
                     <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
                     
+                    <?php if( !$is_front ): ?><?php if ($title): ?><h2 class="title" id="page-title"><?php print $title; ?></h2><?php endif; ?><?php endif; ?>
                     <?php print render($page['content']); ?>
                     
                     <?php print $feed_icons; ?>
@@ -68,8 +69,8 @@
 
             <div id="footer">
                 <?php print render($page['footer']); ?>
-                <div id="hk_logo"><img src="<?php print drupal_get_path( 'theme', 'mahler8' )?>/img/hk_logo.jpg" alt="@hyperkraft" /></div>
-                <div id="footer_logo"><img src="<?php print drupal_get_path( 'theme', 'mahler8' )?>/img/logo_footer.jpg" alt="Brunel Sinfonia - Building bridges through music" /></div>
+                <div id="hk_logo"><img src="/<?php print drupal_get_path( 'theme', 'mahler8' )?>/img/hk_logo.jpg" alt="@hyperkraft" /></div>
+                <div id="footer_logo"><img src="/<?php print drupal_get_path( 'theme', 'mahler8' )?>/img/logo_footer.jpg" alt="Brunel Sinfonia - Building bridges through music" /></div>
             </div>
 
         </div>

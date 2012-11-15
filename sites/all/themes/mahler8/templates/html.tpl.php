@@ -20,7 +20,7 @@
 
         <?php print $styles?>
         
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <?php /*<script src="js/vendor/modernizr-2.6.2.min.js"></script>*/ ?>
         
         <!-- Google Analytics -->
         <?php print mahler8_google_analytics()?>

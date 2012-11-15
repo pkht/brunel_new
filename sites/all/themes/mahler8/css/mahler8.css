@@ -4,7 +4,7 @@ p { font-size:1.4em; margin:0 0 1em 0; }
 a { color:#bc2026; text-decoration:none; }
 a:hover { text-decoration:underline; }
 
-h2 { margin:0 0 1em 0; }
+h2 { margin:0 0 1em 0; font-size:1.8em; }
 
 .clear-both { clear:both; }
 

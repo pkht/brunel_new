@@ -1,0 +1,17 @@
+name = Mahler 8 Mobile
+description = Mahler 8 mini site for Brunel (Mobile version)
+core = 7.x
+engine = phptemplate
+
+stylesheets[all][] = css/normalize.css
+stylesheets[all][] = css/main.css
+stylesheets[all][] = css/mahler8_mobile.css
+
+scripts[] = js/vendor/zepto.min.js
+scripts[] = js/helper.js
+scripts[] = js/main.js
+
+regions[header] = Header
+regions[content_top] = Content top
+regions[content] = Content
+regions[footer] = Footer

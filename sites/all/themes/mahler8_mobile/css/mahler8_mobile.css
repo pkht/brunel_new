@@ -42,6 +42,8 @@ h2 { margin:0 0 1em 0; font-size:1.8em; }
 #title-banner .content { display:none; }
 #title-banner .tickets-link { position:absolute; bottom:52px; right:35px; display:block; }
 #title-banner .tickets-link a { text-indent:-9999em; display:block; width:235px; height:64px; background:url(../img/tickets-link.png) top left no-repeat; }
+.not-front #title-banner { display:none; }
+
 
 #footer #social_media { background:#f8f2e2; padding:30px 35px 40px; }
 

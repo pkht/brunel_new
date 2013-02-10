@@ -10,6 +10,7 @@ stylesheets[all][] = css/mahler8.css
 regions[header] = Header
 regions[content_top] = Content top
 regions[content] = Content
+regions[content_bottom] = Content bottom
 regions[sidebar_first] = Sidebar first
 regions[sidebar_second] = Sidebar second
 regions[footer] = Footer

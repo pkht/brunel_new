@@ -14,4 +14,5 @@ scripts[] = js/main.js
 regions[header] = Header
 regions[content_top] = Content top
 regions[content] = Content
+regions[content_bottom] = Content bottom
 regions[footer] = Footer

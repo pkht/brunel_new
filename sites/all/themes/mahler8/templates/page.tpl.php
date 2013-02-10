@@ -55,6 +55,12 @@
                     <?php if( !$is_front ): ?><?php if ($title): ?><h2 class="title" id="page-title"><?php print $title; ?></h2><?php endif; ?><?php endif; ?>
                     <?php print render($page['content']); ?>
                     
+                    <?php if ($page['content_bottom']): ?>
+                        <div id="content-bottom">
+                          <?php print render($page['content_bottom']); ?>
+                        </div>
+                    <?php endif; ?>
+                    
                     <?php print $feed_icons; ?>
                 
                 </div>

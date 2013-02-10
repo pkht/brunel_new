@@ -1,7 +1,7 @@
 body { font-size:62.5%; background:url(../img/clouds-bkg.jpg) top center no-repeat #f8f2e2; }
 
 p { font-size:1.4em; margin:0 0 1em 0; }
-a { color:#bc2026; text-decoration:none; }
+a, a:visited { color:#bc2026; text-decoration:none; }
 a:hover { text-decoration:underline; }
 
 h2 { margin:0 0 1em 0; font-size:1.8em; }
@@ -22,10 +22,22 @@ h2 { margin:0 0 1em 0; font-size:1.8em; }
 #navigation ul li a { color:#f8f2e2; text-transform:uppercase; text-decoration:none; }
 #navigation ul li a:hover { text-decoration:underline; }
 
-#sidebar-first { width:300px; float:left; margin:20px 20px 0px 0px; overflow:hidden; background:#040707; color:#f8f2e2; }
+#sidebar-first { width:300px; float:left; margin:20px 20px 20px 0px; overflow:hidden; background:#040707; color:#f8f2e2; }
 #sidebar-second { width:300px; float:right; margin:20px 0px 0px 20px; overflow:hidden; background:#040707; color:#f8f2e2; }
 
 #content { margin:20px 0px; padding:20px; background:#f8f2e2; }
+
+.node li { font-size:1.4em; margin:0; }
+
+.node .submitted { display:none; }
+
+.node-type-people h2 { margin-bottom:0.4em; }
+.node-type-people .field-name-field-subtitle { font-size:1.4em; font-weight:bold; margin-bottom:0.4em; }
+/*
+.node-type-people div.submitted { display:none; }
+.node-type-people #content { padding:0px; background:#000000; }
+.node-type-people #content .field-name-field-photo { float:left; width:300px; margin-right:20px; }
+.node-type-people #content .field-name-body { float:right; width:580px; background:#f8f2e2; padding:20px; }*/
 
 .front #content { padding-top:0px; }
 .no-sidebars #content {  }
@@ -75,7 +87,7 @@ h2 { margin:0 0 1em 0; font-size:1.8em; }
 #title-banner .tickets-link a:hover { background-position: bottom left;}
 
 /* Main block */
-#block-system-main { margin-top:20px;}
+.front #block-system-main { margin-top:20px;}
 
 /* Sidebar picture blocks */
 .sidebar .block img {  }
@@ -90,3 +102,9 @@ h2 { margin:0 0 1em 0; font-size:1.8em; }
 #block-block-4 a:hover { text-decoration:underline;  }
 
 /* End Blocks */
+
+/* Views */
+.view-choirs .views-field-title,
+.view-soloists .views-field-title { font-size:1.4em; font-weight:bold; margin-bottom:0.2em;  }
+.view-choirs .views-field-field-subtitle,
+.view-soloists .views-field-field-subtitle { font-size:1.2em; font-weight:bold; margin-bottom:0.2em;  }

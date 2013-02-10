@@ -1,7 +1,7 @@
 body { min-width:320px; -webkit-text-size-adjust: none; font-size:62.5%; background:#000000; margin:0; }
 
 p { font-size:1.8em; margin:0 0 1em 0; }
-a { color:#bc2026; text-decoration:none; }
+a, a:visited { color:#bc2026; text-decoration:none; }
 a:hover { text-decoration:underline; }
 
 h2 { margin:0 0 1em 0; font-size:1.8em; }
@@ -34,6 +34,10 @@ h2 { margin:0 0 1em 0; font-size:1.8em; }
 
 #footer { position:relative; background:#000000; color:#f8f2e2; }
 #footer p { font-size:1.2em; }
+
+.node .submitted { display:none; }
+.node-type-people h2 { margin-bottom:0.4em; }
+.node-type-people .field-name-field-subtitle { font-size:1.4em; font-weight:bold; margin-bottom:0.4em; }
 
 /* Blocks */
 
@@ -70,6 +74,9 @@ h2 { margin:0 0 1em 0; font-size:1.8em; }
 #block-block-4 a:hover { text-decoration:underline;  }
 
 #footer_logo { margin-top:30px; }
+
+.views-field-title { font-size:1.4em; font-weight:bold; margin-bottom:0.2em;  }
+.views-field-field-subtitle { font-size:1.2em; font-weight:bold; margin-bottom:0.2em;  }
 
 
 /* Retina stuff */

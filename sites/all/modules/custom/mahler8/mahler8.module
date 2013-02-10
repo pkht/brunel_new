@@ -10,6 +10,10 @@ function mahler8_block_info()
         'info' => t('Social Media'),
         'cache' => DRUPAL_CACHE_GLOBAL,
     );
+    $blocks['people_photo'] = array(
+        'info' => t('People photos'),
+        'cache' => DRUPAL_CACHE_GLOBAL,
+    );
     return $blocks;
 }
 
@@ -23,6 +27,9 @@ function mahler8_block_view( $delta )
             break;
         case 'social_media':
             $block['content'] = mahler8_social_media();
+            break;
+        case 'people_photo':
+            $block['content'] = mahler8_show_people_photo();
             break;
     }
     return $block;
@@ -77,17 +84,25 @@ function mahler8_social_media()
 
 function mahler8_get_latest_tweet()
 {
-    $url = 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=brunelsinfonia&count=1';
-    $tweets = json_decode( file_get_contents( $url ), TRUE );
-    //dpm( $tweets );
-    
-    $ret = preg_replace("#(^|[\n ])([\w]+?://[\w]+[^ \"\n\r\t< ]*)#", "\\1<a href=\"\\2\" target=\"_blank\">\\2</a>", $tweets[0]['text']);
-    $ret = preg_replace("#(^|[\n ])((www|ftp)\.[^ \"\t\n\r< ]*)#", "\\1<a href=\"http://\\2\" target=\"_blank\">\\2</a>", $ret);
-    $ret = preg_replace("/@(\w+)/", "<a href=\"http://www.twitter.com/\\1\" target=\"_blank\">@\\1</a>", $ret);
-    $ret = preg_replace("/#(\w+)/", "<a href=\"http://search.twitter.com/search?q=\\1\" target=\"_blank\">#\\1</a>", $ret);
+    $cid = 'cache:latest:tweet';
+    $cached = cache_get( $cid );
+    if( !$cached ) {
+        $url = 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=brunelsinfonia&count=1';
+        $tweets = json_decode( file_get_contents( $url ), TRUE );
+        //dpm( $tweets );
 
+        $ret = preg_replace("#(^|[\n ])([\w]+?://[\w]+[^ \"\n\r\t< ]*)#", "\\1<a href=\"\\2\" target=\"_blank\">\\2</a>", $tweets[0]['text']);
+        $ret = preg_replace("#(^|[\n ])((www|ftp)\.[^ \"\t\n\r< ]*)#", "\\1<a href=\"http://\\2\" target=\"_blank\">\\2</a>", $ret);
+        $ret = preg_replace("/@(\w+)/", "<a href=\"http://www.twitter.com/\\1\" target=\"_blank\">@\\1</a>", $ret);
+        $ret = preg_replace("/#(\w+)/", "<a href=\"http://search.twitter.com/search?q=\\1\" target=\"_blank\">#\\1</a>", $ret);
+
+
+        $output = '<div class="latest_tweet"><h2>Latest tweet</h2><p>'.$ret.'</p></div>';
+        cache_set( $cid, $output, 'cache', time() + ( 60 * 60 ) );
+    }
+    else 
+        $output = $cached->data;
     
-    $output = '<div class="latest_tweet"><h2>Latest tweet</h2><p>'.$ret.'</p></div>';
     return $output;
 }
 
@@ -95,4 +110,15 @@ function mahler8_add_social_media_head()
 {
     
     
+}
+
+function mahler8_show_people_photo()
+{
+    $node = node_load( arg( 1 ) );
+    $output = '';
+    if( $node->type == 'people' && !empty( $node->field_photo ) ) 
+    {
+        $output .= theme( 'image_style', array( 'style_name' => 'people_photo', 'path' => $node->field_photo['und'][0]['uri'] ) );
+    }
+    return $output;
 }
